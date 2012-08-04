@@ -19,10 +19,16 @@ public class Estoque {
 	}
 
 	public void cadastrarFlor(Flor flor) {
-
+		this.getListaFlores().add(flor);
 	}
 
-	public List<Flor> buscar(Esp especificao) {
-		return null;
+	public List<Flor> buscar(Esp espProcurada) {
+		List<Flor> flores = new ArrayList<Flor>();
+		for (Flor florElement : this.getListaFlores()) {
+			if (florElement.getEspecificacao().comparar(espProcurada)) {
+				flores.add(florElement);
+			}
+		}
+		return flores;
 	}
 }

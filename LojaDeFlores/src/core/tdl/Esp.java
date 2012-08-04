@@ -30,7 +30,9 @@ public class Esp {
 	}
 	
 	public boolean comparar(Esp espcificacao){
-		return false;
+		if (!this.getTipo().equals(espcificacao.getTipo())) return false;
+		if (!this.getCor().equals(espcificacao.getCor())) return false;	
+		return true;
 	}
 
 }
